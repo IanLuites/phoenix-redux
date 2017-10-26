@@ -1,9 +1,27 @@
 {
   "name": "phoenix-redux",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Redux middleware that integrates with [Elixir] Phoenix channels.",
-  "main": "phoenix-redux.js",
+  "main": "lib/phoenix-redux.js",
+  "module": "lib/phoenix-redux.js",
   "repository": "https://github.com/IanLuites/phoenix-redux.git",
   "author": "Ian Luites <ik.luites@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "redux",
+    "phoenix",
+    "elixir",
+    "action"
+  ],
+  "scripts": {
+    "compile": "./node_modules/.bin/babel --source-maps -d lib/ src/",
+    "minify": "./node_modules/.bin/uglifyjs lib/phoenix-redux.js --compress --preamble '//phoenix-redux, LGPL-3.0, https://github.com/IanLuites/phoenix-redux.git' --source-map \"content='lib/phoenix-redux.js.map'\" --source-map \"filename='lib/phoenix-redux.min.js.map'\" --mangle -o 'lib/phoenix-redux.min.js'",
+    "prepublish": "npm run compile && npm run minify"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "uglify-js": "^3.1.5",
+    "uglifyjs": "^2.4.11"
+  }
 }
