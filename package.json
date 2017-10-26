@@ -1,9 +1,9 @@
 {
   "name": "phoenix-redux",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Redux middleware that integrates with [Elixir] Phoenix channels.",
-  "main": "lib/phoenix-redux.js",
-  "module": "lib/phoenix-redux.js",
+  "main": "lib/phoenix-redux.min.js",
+  "module": "lib/phoenix-redux.min.js",
   "repository": "https://github.com/IanLuites/phoenix-redux.git",
   "author": "Ian Luites <ik.luites@gmail.com>",
   "license": "MIT",
