@@ -1,9 +1,13 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 /**
  * Phoenix Channel middleware for Redux.
  *
  * @param {*} socket The phoenix socket.
  */
-const reduxPhoenix = socket => {
+function reduxPhoenix(socket) {
   let channels = {};
 
   return _store => next => action => {
@@ -25,18 +29,6 @@ const reduxPhoenix = socket => {
       return next(action);
     }
   };
-};
+}
 
-export default reduxPhoenix;
-
-/**
- * Turns a redux action into a channel action.
- *
- * @param {string} channel The Phoenix channel name.
- * @param {object} action The redux action.
- * @return {object} The channel action.
- */
-export function channelAction(channel, action) {
-  return {...action, channel: channel};
-};
-
+exports.reduxPhoenix = reduxPhoenix;
